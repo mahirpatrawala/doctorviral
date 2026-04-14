@@ -7,14 +7,17 @@ export default function PatientHome() {
   const navigate = useNavigate()
   const [practice, setPractice] = useState(null)
   const [feedback, setFeedback] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     axios.get(`/api/practices/${practiceId}`).then(r => {
       if (r.data?.name) setPractice(r.data)
-    }).catch(() => {})
+      else setError(r.data?.error || 'Practice not found')
+    }).catch(e => setError(e.message))
     axios.get(`/api/feedback/${practiceId}?public=true`).then(r => setFeedback(r.data)).catch(() => {})
   }, [practiceId])
 
+  if (error) return <div className="flex items-center justify-center h-screen"><div className="text-center text-gray-500"><p className="text-lg font-medium">Could not load practice</p><p className="text-sm mt-1 text-red-500">{error}</p></div></div>
   if (!practice) return <div className="flex items-center justify-center h-screen"><div className="text-gray-400">Loading...</div></div>
 
   return (
