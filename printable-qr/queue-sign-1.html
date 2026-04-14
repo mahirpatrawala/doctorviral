@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Queue Sign — City Health Clinic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .card { width: 148mm; padding: 16mm 12mm; border: 2px solid #e5e7eb; border-radius: 16px; text-align: center; page-break-inside: avoid; }
+    .header-icon { font-size: 40px; margin-bottom: 8px; }
+    .clinic-name { font-size: 22px; font-weight: 900; color: #1e3a5f; margin-bottom: 4px; }
+    .tagline { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+    .instruction-box { background: #eff6ff; border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; }
+    .instruction-box h2 { font-size: 17px; font-weight: 700; color: #1e3a5f; margin-bottom: 10px; }
+    .steps { list-style: none; text-align: left; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #374151; margin-bottom: 8px; line-height: 1.4; }
+    .step-num { background: #1e3a5f; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .qr-wrapper { background: #f9fafb; border-radius: 12px; padding: 16px; display: inline-block; margin-bottom: 16px; }
+    .qr-wrapper img { width: 180px; height: 180px; display: block; }
+    .scan-label { font-size: 15px; font-weight: 700; color: #1e3a5f; margin-bottom: 4px; }
+    .url { font-size: 11px; color: #9ca3af; word-break: break-all; margin-bottom: 20px; }
+    .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+    .benefit { background: #f9fafb; border-radius: 8px; padding: 8px; font-size: 12px; color: #374151; }
+    .benefit .icon { font-size: 18px; display: block; margin-bottom: 3px; }
+    .footer { font-size: 11px; color: #9ca3af; border-top: 1px solid #f3f4f6; padding-top: 12px; }
+    @media print { body { min-height: unset; } .card { border: 1.5px solid #d1d5db; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header-icon">🏥</div>
+    <div class="clinic-name">City Health Clinic</div>
+    <div class="tagline">42 Main Street, Mumbai</div>
+    <div class="instruction-box">
+      <h2>Skip the waiting room!</h2>
+      <ul class="steps">
+        <li><span class="step-num">1</span><span>Scan the QR code with your phone camera</span></li>
+        <li><span class="step-num">2</span><span>Enter your name and reason for visit</span></li>
+        <li><span class="step-num">3</span><span>Go home or wait nearby — we'll notify you when it's your turn</span></li>
+        <li><span class="step-num">4</span><span>Come to reception only when called</span></li>
+      </ul>
+    </div>
+    <div class="scan-label">Scan to join the queue</div>
+    <div class="qr-wrapper"><img src="data:image/png;base64,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" alt="QR Code" /></div>
+    <div class="url">http://localhost:5173/patient/1</div>
+    <div class="benefit-grid">
+      <div class="benefit"><span class="icon">🏠</span>Wait from anywhere</div>
+      <div class="benefit"><span class="icon">⏱️</span>Live wait updates</div>
+      <div class="benefit"><span class="icon">📱</span>No app to install</div>
+      <div class="benefit"><span class="icon">🔔</span>Get notified</div>
+    </div>
+    <div class="footer">Powered by Waitwell &nbsp;·&nbsp; +91 98765 43210</div>
+  </div>
+</body>
+</html>

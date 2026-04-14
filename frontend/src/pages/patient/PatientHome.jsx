@@ -10,7 +10,7 @@ export default function PatientHome() {
 
   useEffect(() => {
     axios.get(`/api/practices/${practiceId}`).then(r => setPractice(r.data))
-    axios.get(`/api/feedback/${practiceId}?public=true`).then(r => setFeedback(r.data))
+    axios.get(`/api/feedback/${practiceId}/public`).then(r => setFeedback(r.data))
   }, [practiceId])
 
   if (!practice) return <div className="flex items-center justify-center h-screen"><div className="text-gray-400">Loading...</div></div>

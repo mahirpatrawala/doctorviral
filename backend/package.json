@@ -1,0 +1,21 @@
+{
+  "name": "waitwell-backend",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --experimental-sqlite src/index.js",
+    "start": "node --experimental-sqlite src/index.js",
+    "seed": "node --experimental-sqlite src/seed.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "node-cron": "^3.0.3",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.7.5",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

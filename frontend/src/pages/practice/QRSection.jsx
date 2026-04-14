@@ -6,7 +6,7 @@ export default function QRSection({ practiceId }) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    axios.get(`/api/practices/${practiceId}?action=qr`).then(r => setQr(r.data))
+    axios.get(`/api/practices/${practiceId}/qr`).then(r => setQr(r.data))
   }, [practiceId])
 
   const copy = () => {

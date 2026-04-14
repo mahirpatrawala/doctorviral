@@ -33,7 +33,7 @@ export default function AppointmentManager({ practiceId }) {
   }, [practiceId, date])
 
   const updateStatus = async (id, status) => {
-    await axios.patch(`/api/appointments/${id}/status`, { status })
+    await axios.patch(`/api/appointments/${id}?action=status`, { status })
     fetchAppts()
   }
 
