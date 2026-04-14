@@ -24,8 +24,8 @@ export default function BookAppointment() {
     if (step === 2 && form.doctor_id) {
       setSlots([])
       setSelectedSlot(null)
-      axios.get(`/api/appointments/${practiceId}/slots`, {
-        params: { doctor_id: form.doctor_id, date: selectedDate, visit_type_id: form.visit_type_id }
+      axios.get(`/api/appointments/slots`, {
+        params: { practiceId, doctor_id: form.doctor_id, date: selectedDate, visit_type_id: form.visit_type_id }
       }).then(r => setSlots(r.data))
     }
   }, [step, form.doctor_id, selectedDate, form.visit_type_id, practiceId])
