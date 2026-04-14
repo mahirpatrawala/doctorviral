@@ -9,8 +9,10 @@ export default function PatientHome() {
   const [feedback, setFeedback] = useState(null)
 
   useEffect(() => {
-    axios.get(`/api/practices/${practiceId}`).then(r => setPractice(r.data))
-    axios.get(`/api/feedback/${practiceId}?public=true`).then(r => setFeedback(r.data))
+    axios.get(`/api/practices/${practiceId}`).then(r => {
+      if (r.data?.name) setPractice(r.data)
+    }).catch(() => {})
+    axios.get(`/api/feedback/${practiceId}?public=true`).then(r => setFeedback(r.data)).catch(() => {})
   }, [practiceId])
 
   if (!practice) return <div className="flex items-center justify-center h-screen"><div className="text-gray-400">Loading...</div></div>
@@ -22,7 +24,7 @@ export default function PatientHome() {
         <div className="max-w-lg mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-lg">
-              {practice.name[0]}
+              {practice.name?.[0] || "?"}
             </div>
             <div>
               <h1 className="font-bold text-gray-900">{practice.name}</h1>

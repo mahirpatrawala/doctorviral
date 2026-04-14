@@ -32,7 +32,7 @@ export default function Landing() {
                   className="w-full card hover:shadow-md transition cursor-pointer text-left flex items-center gap-4"
                 >
                   <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">
-                    {p.name[0]}
+                    {p.name?.[0] || "?"}
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">{p.name}</div>

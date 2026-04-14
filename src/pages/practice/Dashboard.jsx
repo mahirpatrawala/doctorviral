@@ -47,7 +47,7 @@ export default function Dashboard() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">{practice.name[0]}</div>
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">{practice.name?.[0] || "?"}</div>
               <div>
                 <h1 className="font-bold text-gray-900 text-sm">{practice.name}</h1>
                 <p className="text-xs text-gray-500">Practice Dashboard</p>
