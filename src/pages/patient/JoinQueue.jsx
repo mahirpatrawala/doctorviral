@@ -19,7 +19,7 @@ export default function JoinQueue() {
     if (!form.patient_name.trim()) return setError('Name is required')
     setLoading(true)
     try {
-      const res = await axios.post('/api/queue/join', { ...form, practice_id: practiceId })
+      const res = await axios.post('/api/queue', { ...form, practice_id: practiceId })
       navigate(`/queue/status/${res.data.token}`)
     } catch {
       setError('Failed to join queue. Please try again.')
